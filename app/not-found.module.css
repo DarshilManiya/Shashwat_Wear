@@ -1,0 +1,108 @@
+/* Not Found Page Styles */
+.container {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    background: radial-gradient(circle at center, rgba(91, 158, 166, 0.05) 0%, transparent 70%);
+}
+
+.errorCode {
+    font-family: 'Playfair Display', serif;
+    font-size: 120px;
+    font-weight: 800;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 2px var(--primary-teal);
+    opacity: 0.3;
+    margin-bottom: -40px;
+    position: relative;
+    z-index: 0;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--dark-slate);
+    margin-bottom: 16px;
+}
+
+.description {
+    font-size: 18px;
+    color: var(--text-muted);
+    max-width: 500px;
+    margin: 0 auto 32px;
+}
+
+.actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.homeBtn {
+    background: var(--dark-slate);
+    color: var(--white);
+    padding: 12px 32px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: 1px solid var(--dark-slate);
+}
+
+.homeBtn:hover {
+    background: var(--primary-teal);
+    border-color: var(--primary-teal);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(91, 158, 166, 0.3);
+}
+
+.contactBtn {
+    background: transparent;
+    color: var(--dark-slate);
+    padding: 12px 32px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.contactBtn:hover {
+    border-color: var(--dark-slate);
+    background: var(--white);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .errorCode {
+        font-size: 80px;
+        margin-bottom: -20px;
+    }
+
+    .title {
+        font-size: 32px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    .actions {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+    }
+}

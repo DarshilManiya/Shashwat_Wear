@@ -1,0 +1,122 @@
+.launchCta {
+    background: var(--golden-yellow);
+    padding: 100px 0;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.left h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--dark-slate);
+    margin-bottom: 20px;
+}
+
+.left h2 span {
+    text-decoration: underline;
+    text-decoration-color: var(--dark-slate);
+}
+
+.left p {
+    color: rgba(26, 35, 50, 0.7);
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 32px;
+}
+
+.buttons {
+    display: flex;
+    gap: 16px;
+}
+
+.btnPrimary {
+    background: var(--dark-slate);
+    color: var(--white);
+    padding: 16px 32px;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+}
+
+.btnPrimary:hover {
+    background: var(--darker-slate);
+}
+
+.btnOutline {
+    background: transparent;
+    color: var(--dark-slate);
+    padding: 16px 32px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border: 2px solid var(--dark-slate);
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+}
+
+.btnOutline:hover {
+    background: rgba(26, 35, 50, 0.1);
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: rgba(26, 35, 50, 0.08);
+    padding: 24px;
+    border-radius: 12px;
+}
+
+.featureNum {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    background: var(--dark-slate);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.feature h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--dark-slate);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.feature p {
+    color: rgba(26, 35, 50, 0.6);
+    font-size: 14px;
+    margin: 0;
+}
+
+@media (max-width: 1024px) {
+    .layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}

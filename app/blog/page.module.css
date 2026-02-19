@@ -1,0 +1,125 @@
+.hero {
+    background: linear-gradient(135deg, var(--dark-slate) 0%, var(--darker-slate) 100%);
+    padding: 120px 0 60px;
+    text-align: center;
+}
+
+.hero .sectionLabel {
+    color: var(--primary-teal);
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 16px;
+}
+
+.hero p {
+    color: var(--text-light);
+    font-size: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.gridSection {
+    background: var(--light-bg);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.35s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.cardImg {
+    height: 200px;
+    width: 100%;
+    position: relative;
+}
+
+.category {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: var(--primary-teal);
+    color: var(--white);
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cardContent {
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.date {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.cardContent h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--dark-slate);
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.cardContent p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.readMore {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary-teal);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+}
+
+.readMore:hover {
+    color: var(--dark-slate);
+}
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

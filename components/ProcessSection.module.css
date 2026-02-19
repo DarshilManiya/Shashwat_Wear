@@ -1,0 +1,75 @@
+.process {
+    background: linear-gradient(180deg, var(--white) 0%, var(--soft-gold-bg) 100%);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.card {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 40px 30px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.card:hover {
+    box-shadow: 0 12px 35px rgba(212, 168, 67, 0.12);
+    transform: translateY(-6px);
+    border-color: rgba(212, 168, 67, 0.3);
+}
+
+.stepNumber {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 72px;
+    font-weight: 800;
+    color: rgba(0, 0, 0, 0.04);
+    line-height: 1;
+}
+
+.iconBox {
+    width: 52px;
+    height: 52px;
+    background: rgba(91, 158, 166, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-teal);
+    font-size: 22px;
+    margin-bottom: 20px;
+    transition: all 0.4s ease;
+}
+
+.card:hover .iconBox {
+    background: var(--primary-teal);
+    color: var(--white);
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(91, 158, 166, 0.3);
+}
+
+.card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--dark-slate);
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

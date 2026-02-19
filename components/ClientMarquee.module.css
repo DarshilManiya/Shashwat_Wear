@@ -1,0 +1,73 @@
+.section {
+    padding: 80px 0;
+    background: var(--dark-slate);
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section::before,
+.section::after {
+    display: none;
+    /* Removed fade gradients as they are not needed for static layout */
+}
+
+.label {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 48px;
+}
+
+.label span {
+    color: var(--golden-yellow);
+}
+
+.showcase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.logoItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 90px;
+    padding: 16px 32px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    filter: grayscale(100%) brightness(0.8);
+    opacity: 0.6;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.logoItem:hover {
+    filter: grayscale(0%) brightness(1);
+    opacity: 1;
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.darkBg {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.darkBg:hover {
+    background: rgba(26, 35, 50, 0.8);
+}

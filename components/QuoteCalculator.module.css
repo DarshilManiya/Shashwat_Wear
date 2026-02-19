@@ -1,0 +1,420 @@
+.calculator {
+    background: linear-gradient(180deg, var(--soft-mint-bg) 0%, var(--light-bg) 100%);
+    padding: 100px 0;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 48px;
+    align-items: start;
+}
+
+.form {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.group {
+    margin-bottom: 32px;
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--dark-slate);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.label svg {
+    color: var(--primary-teal);
+    font-size: 18px;
+}
+
+.optionsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 12px;
+}
+
+.optionCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 10px;
+    background: var(--light-bg);
+    border: 1px solid transparent;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.optionCard:hover {
+    border-color: var(--golden-yellow);
+    background: var(--soft-gold-bg);
+}
+
+.optionCard.active {
+    background: var(--bg-gold-light);
+    border-color: var(--golden-yellow);
+    box-shadow: 0 0 0 2px var(--golden-yellow) inset;
+}
+
+/* Custom bg for active state since var might not exist */
+.optionCard.active {
+    background: #fff9e6;
+}
+
+.optionIcon {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.optionLabel {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--dark-slate);
+    line-height: 1.3;
+}
+
+/* Fabric Pills */
+.fabricPills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.pill {
+    padding: 10px 20px;
+    background: var(--light-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.pill:hover {
+    border-color: var(--primary-teal);
+    color: var(--primary-teal);
+}
+
+.pill.active {
+    background: var(--primary-teal);
+    color: var(--white);
+    border-color: var(--primary-teal);
+    box-shadow: 0 4px 12px rgba(91, 158, 166, 0.3);
+}
+
+/* Customization Cards */
+.customGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.customCard {
+    text-align: left;
+    padding: 16px;
+    background: var(--light-bg);
+    border: 1px solid transparent;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.customCard:hover {
+    border-color: var(--golden-yellow);
+    background: var(--soft-gold-bg);
+}
+
+.customCard.active {
+    background: var(--bg-gold-light);
+    border-color: var(--golden-yellow);
+    box-shadow: 0 0 0 2px var(--golden-yellow) inset;
+}
+
+/* Custom bg for active state since var might not exist */
+.customCard.active {
+    background: #fff9e6;
+}
+
+.customIcon {
+    font-size: 20px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.customCard h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--dark-slate);
+    margin-bottom: 4px;
+}
+
+.customCard p {
+    font-size: 11px;
+    color: var(--text-muted);
+    line-height: 1.3;
+}
+
+/* Quantity Input */
+.quantityRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 300px;
+}
+
+.qtyBtn {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: var(--white);
+    color: var(--dark-slate);
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.qtyBtn:hover {
+    background: var(--light-bg);
+    border-color: var(--dark-slate);
+}
+
+.qtyInput {
+    flex: 1;
+    height: 40px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--dark-slate);
+}
+
+.qtyInput:focus {
+    outline: none;
+    border-color: var(--primary-teal);
+}
+
+.moqNote {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-left: 6px;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.volumeBadge {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 6px 12px;
+    background: rgba(37, 211, 102, 0.1);
+    color: #25D366;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 4px;
+}
+
+.estimateBtn {
+    width: 100%;
+    padding: 16px;
+    background: var(--dark-slate);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.35s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.estimateBtn:hover {
+    background: var(--primary-teal);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(91, 158, 166, 0.25);
+}
+
+/* Result Panel */
+.resultPanel {
+    background: var(--dark-slate);
+    padding: 40px;
+    border-radius: 16px;
+    color: var(--white);
+    position: sticky;
+    top: 100px;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.resultHeader {
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 20px;
+}
+
+.resultHeader h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--golden-yellow);
+    margin-bottom: 8px;
+}
+
+.resultHeader p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+
+.resultPlaceholder {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.placeholderIcon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    opacity: 0.5;
+}
+
+.resultBody {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.resultSummary {
+    margin-bottom: 24px;
+}
+
+.resultItem {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.resultItem span {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.resultItem.discount {
+    color: var(--golden-yellow);
+}
+
+.resultItem.discount span {
+    color: var(--golden-yellow);
+}
+
+.resultDivider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+    margin: 10px 0 24px;
+}
+
+.priceDisplay {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+.unitPrice {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.totalPrice {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    color: var(--golden-yellow);
+}
+
+.totalPrice strong {
+    font-size: 28px;
+    font-family: 'Playfair Display', serif;
+}
+
+.disclaimer {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.4);
+    line-height: 1.4;
+    margin-bottom: 24px;
+    font-style: italic;
+}
+
+.ctaBtn {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px;
+    background: var(--white);
+    color: var(--dark-slate);
+    font-weight: 700;
+    font-size: 13px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.ctaBtn:hover {
+    background: var(--golden-yellow);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+    .layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .quantityRow {
+        width: 100%;
+        max-width: none;
+    }
+
+    .optionsGrid,
+    .customGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

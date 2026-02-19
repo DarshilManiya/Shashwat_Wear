@@ -1,0 +1,149 @@
+.footer {
+    background: var(--darker-slate);
+    padding: 60px 0 0;
+}
+
+.grid {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.brand .logoBox {
+    background: var(--white);
+    display: inline-block;
+    padding: 6px 10px;
+    border: 2px solid var(--text-light);
+    margin-bottom: 16px;
+}
+
+.brand .logoText {
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    font-size: 18px;
+    color: var(--dark-slate);
+}
+
+.brand .logoText span {
+    color: var(--golden-yellow);
+    font-style: italic;
+}
+
+.brand p {
+    color: var(--text-light);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.social {
+    display: flex;
+    gap: 16px;
+}
+
+.social a {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--white);
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.social a:hover {
+    background: var(--primary-teal);
+    transform: translateY(-3px);
+}
+
+.column h3 {
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.column ul li {
+    margin-bottom: 12px;
+}
+
+.column ul li a {
+    color: var(--text-light);
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.column ul li a:hover {
+    color: var(--white);
+    padding-left: 4px;
+}
+
+.address {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-light);
+}
+
+.bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 24px 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.bottomInner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bottomInner p {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 13px;
+    margin: 0;
+}
+
+.bottomLinks {
+    display: flex;
+    gap: 24px;
+}
+
+.bottomLinks a {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 13px;
+    transition: color 0.3s;
+}
+
+.bottomLinks a:hover {
+    color: var(--white);
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .bottomInner {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+}

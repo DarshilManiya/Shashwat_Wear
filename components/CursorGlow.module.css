@@ -1,0 +1,36 @@
+.glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle,
+            rgba(212, 168, 67, 0.06) 0%,
+            rgba(212, 168, 67, 0.02) 40%,
+            transparent 70%);
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    will-change: transform;
+}
+
+.visible {
+    opacity: 1;
+}
+
+/* Hide on touch / small screens */
+@media (max-width: 1024px) {
+    .glow {
+        display: none;
+    }
+}
+
+/* Slightly more visible in light mode */
+:global([data-theme="light"]) .glow {
+    background: radial-gradient(circle,
+            rgba(212, 168, 67, 0.08) 0%,
+            rgba(212, 168, 67, 0.03) 40%,
+            transparent 70%);
+}

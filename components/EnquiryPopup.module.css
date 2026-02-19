@@ -1,0 +1,262 @@
+/* ===== BACKDROP ===== */
+.backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(6px);
+    z-index: 9000;
+}
+
+/* ===== MODAL ===== */
+.modal {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    z-index: 9001;
+    width: min(680px, 94vw);
+    height: fit-content;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: var(--dark-slate);
+    border: 1px solid rgba(212, 168, 67, 0.2);
+    border-radius: 16px;
+    padding: 48px 44px 40px;
+    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+/* Custom scrollbar */
+.modal::-webkit-scrollbar {
+    width: 4px;
+}
+
+.modal::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.modal::-webkit-scrollbar-thumb {
+    background: rgba(212, 168, 67, 0.3);
+    border-radius: 2px;
+}
+
+/* ===== CLOSE BUTTON ===== */
+.closeBtn {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.closeBtn:hover {
+    background: rgba(212, 168, 67, 0.15);
+    border-color: var(--golden-yellow);
+    color: var(--golden-yellow);
+}
+
+/* ===== HEADER ===== */
+.header {
+    margin-bottom: 28px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border: 1px solid rgba(212, 168, 67, 0.35);
+    background: rgba(212, 168, 67, 0.08);
+    color: var(--golden-yellow);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+
+.header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.25;
+    margin-bottom: 8px;
+}
+
+.header h2 span {
+    color: var(--golden-yellow);
+}
+
+.header p {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ===== FORM ===== */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.field label {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.field input,
+.field select,
+.field textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 12px 14px;
+    color: #fff;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.2s ease, background 0.2s ease;
+    outline: none;
+    width: 100%;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+    color: rgba(255, 255, 255, 0.28);
+}
+
+.field select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,0.4)' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+}
+
+.field select option {
+    background: var(--dark-slate);
+    color: #fff;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+    border-color: rgba(212, 168, 67, 0.5);
+    background: rgba(212, 168, 67, 0.04);
+}
+
+.field textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* ===== SUBMIT BUTTON ===== */
+.submitBtn {
+    margin-top: 6px;
+    background: var(--golden-yellow);
+    color: var(--dark-slate);
+    border: none;
+    padding: 16px 32px;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.submitBtn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.submitBtn:hover::before {
+    left: 100%;
+}
+
+.submitBtn:hover {
+    background: var(--golden-yellow-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(212, 168, 67, 0.35);
+}
+
+/* ===== SUCCESS STATE ===== */
+.success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 32px 16px;
+    gap: 16px;
+}
+
+.successIcon {
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, var(--golden-yellow), #f59e0b);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: var(--dark-slate);
+    font-weight: 900;
+    box-shadow: 0 0 40px rgba(212, 168, 67, 0.3);
+}
+
+.success h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.success p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+    .modal {
+        padding: 36px 22px 30px;
+    }
+
+    .row {
+        grid-template-columns: 1fr;
+    }
+
+    .header h2 {
+        font-size: 24px;
+    }
+}

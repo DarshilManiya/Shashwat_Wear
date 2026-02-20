@@ -15,7 +15,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const post = blogs.posts.find((p) => p.slug === params.slug);
+  const { slug } = await params;
+  const post = blogs.posts.find((p) => p.slug === slug);
   if (!post) return { title: 'Blog Not Found' };
   
   return {
@@ -27,16 +28,24 @@ export async function generateMetadata({ params }) {
 function BlogContent({ content }) {
   // Parse markdown-like content to HTML
   let html = content
-    .replace(/\n/g, '<br />')
-    .replace(/## (.*)/g, '<h2>$1</h2>')
-    .replace(/### (.*)/g, '<h3>$1</h3>')
+    .replace(/<br \/>/g, '</p><p>')
+    .replace(/<br \/><br \/>/g, '</p><p>')
+    .replace(/## (.*)<br \/>/g, '</p><h2>$1</h2><p>')
+    .replace(/### (.*)<br \/>/g, '</p><h3>$1</h3><p>')
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  
+  // Wrap in paragraphs
+  html = '<p>' + html + '</p>';
+  // Clean up empty paragraphs
+  html = html.replace(/<p><\/p>/g, '');
+  html = html.replace(/<p>(\s*)<\/p>/g, '');
   
   return <div className={styles.content} dangerouslySetInnerHTML={{ __html: html }} />;
 }
 
-export default function BlogPostPage({ params }) {
-  const post = blogs.posts.find((p) => p.slug === params.slug);
+export default async function BlogPostPage({ params }) {
+  const { slug } = await params;
+  const post = blogs.posts.find((p) => p.slug === slug);
   
   if (!post) {
     notFound();

@@ -5,7 +5,7 @@ import { FaGlobeAmericas, FaShippingFast, FaHandshake, FaFileContract, FaPlane, 
 import TopBar from '../../components/TopBar';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import WhatsAppButton from '../../components/WhatsAppButton';
+
 import ContactSection from '../../components/ContactSection';
 import AnimatedSection from '../../components/AnimatedSection';
 import WorldMap from '../../components/WorldMap';
@@ -184,7 +184,7 @@ export default function InternationalClient() {
 
             <ContactSection />
             <Footer />
-            <WhatsAppButton />
+
         </>
     );
 }

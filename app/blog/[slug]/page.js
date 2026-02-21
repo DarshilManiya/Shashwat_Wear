@@ -4,7 +4,7 @@ import Link from 'next/link';
 import TopBar from '../../../components/TopBar';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
-import WhatsAppButton from '../../../components/WhatsAppButton';
+
 import blogs from '../../../data/blogs.json';
 import styles from './page.module.css';
 
@@ -279,7 +279,7 @@ export default async function BlogPostPage({ params }) {
       </article>
 
       <Footer />
-      <WhatsAppButton />
+
     </>
   );
 }

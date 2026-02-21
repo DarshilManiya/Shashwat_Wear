@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import WhatsAppButton from '../../components/WhatsAppButton';
+
 
 const categories = ['All', "Men's Collection", "Women's Wear", "Kids Apparel", "Uniforms"];
 
@@ -437,7 +437,7 @@ function GalleryContent() {
                 </AnimatePresence>
             </main>
             <Footer />
-            <WhatsAppButton />
+
         </>
     );
 }

@@ -18,7 +18,7 @@ import LaunchCTASection from '../components/LaunchCTASection';
 import FAQSection from '../components/FAQSection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
-import WhatsAppButton from '../components/WhatsAppButton';
+
 
 export default function Home() {
   return (
@@ -46,7 +46,7 @@ export default function Home() {
       <FAQSection />
       <ContactSection />
       <Footer />
-      <WhatsAppButton />
+
     </>
   );
 }

@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import TopBar from '../../components/TopBar';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import WhatsAppButton from '../../components/WhatsAppButton';
+
 import AnimatedSection from '../../components/AnimatedSection';
 import blogs from '../../data/blogs.json';
 
@@ -58,7 +58,7 @@ export default function BlogPage() {
             </AnimatedSection>
 
             <Footer />
-            <WhatsAppButton />
+
         </>
     );
 }

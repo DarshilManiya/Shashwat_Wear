@@ -1,6 +1,7 @@
 'use client';
 
 import { FaInstagram, FaFacebookF, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
+import Link from 'next/link';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -22,23 +23,23 @@ export default function Footer() {
                 <div className={styles.column}>
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#infrastructure">Infrastructure</a></li>
-                        <li><a href="/international">International Buyers</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><Link href="/">Home</Link></li>
+                        <li><Link href="/about">About Us</Link></li>
+                        <li><Link href="/#products">Products</Link></li>
+                        <li><Link href="/#infrastructure">Infrastructure</Link></li>
+                        <li><Link href="/international">Export</Link></li>
+                        <li><Link href="/blog">Blog</Link></li>
+                        <li><Link href="/#contact">Contact</Link></li>
                     </ul>
                 </div>
                 <div className={styles.column}>
                     <h3>Products</h3>
                     <ul>
-                        <li><a href="#products">Men&apos;s Shirts</a></li>
-                        <li><a href="#products">Women&apos;s Wear</a></li>
-                        <li><a href="#products">Kids Apparel</a></li>
-                        <li><a href="#products">Corporate Uniforms</a></li>
-                        <li><a href="#products">Private Label</a></li>
+                        <li><Link href="/gallery?category=Men's+Collection">Men&apos;s Shirts</Link></li>
+                        <li><Link href="/gallery?category=Women's+Wear">Women&apos;s Wear</Link></li>
+                        <li><Link href="/gallery?category=Kids+Apparel">Kids Apparel</Link></li>
+                        <li><Link href="/gallery?category=Uniforms">Corporate Uniforms</Link></li>
+                        <li><Link href="/#products">Private Label</Link></li>
                     </ul>
                 </div>
                 <div className={styles.column}>

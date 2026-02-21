@@ -13,7 +13,7 @@ const navLinks = [
     { label: 'GALLERY', href: '/gallery' },
     { label: 'CERTIFICATIONS', href: '/certifications' },
     { label: 'EXPORTS', href: '/international' },
-    { label: 'ABOUT', href: '#about' },
+    { label: 'ABOUT', href: '/about' },
     { label: 'CONTACT', href: '#contact' },
 ];
 

@@ -1,0 +1,354 @@
+.hero {
+    background: linear-gradient(135deg, var(--darker-slate) 0%, var(--dark-slate) 100%);
+    color: var(--white);
+    padding: 180px 24px 120px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.heroContent {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.heroLabel {
+    color: var(--golden-yellow);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    display: inline-block;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* Our Story Section */
+.storySection {
+    padding: 100px 24px;
+    background: var(--white);
+}
+
+.storyContainer {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.storyImageWrapper {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 500px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.storyContent h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: var(--dark-slate);
+    margin-bottom: 24px;
+}
+
+.storyContent p {
+    color: var(--text-muted);
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Core Values Section */
+.valuesSection {
+    padding: 100px 24px;
+    background: var(--light-bg);
+    text-align: center;
+}
+
+.valuesHeader {
+    margin-bottom: 60px;
+}
+
+.valuesHeader h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: var(--dark-slate);
+    margin-bottom: 16px;
+}
+
+.valuesGrid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.valueCard {
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: all 0.6s var(--ease-soothing);
+}
+
+.valueCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+    border-color: var(--primary-teal);
+}
+
+.valueIcon {
+    font-size: 32px;
+    color: var(--primary-teal);
+    margin-bottom: 20px;
+    background: rgba(91, 158, 166, 0.1);
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+}
+
+.valueCard h3 {
+    font-size: 20px;
+    color: var(--dark-slate);
+    margin-bottom: 12px;
+}
+
+.valueCard p {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Leadership Section */
+.leadershipSection {
+    padding: 100px 24px;
+    background: var(--white);
+    text-align: center;
+}
+
+.leadershipGrid {
+    max-width: 1000px;
+    margin: 60px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.leaderCard {
+    text-align: left;
+}
+
+.leaderImage {
+    width: 100%;
+    aspect-ratio: 1;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background: var(--light-bg);
+    /* Placeholder bg */
+}
+
+.leaderCard h3 {
+    font-size: 22px;
+    color: var(--dark-slate);
+    margin-bottom: 4px;
+}
+
+.leaderRole {
+    color: var(--golden-yellow);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.leaderCard p {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Timeline/Milestones */
+.timelineSection {
+    padding: 100px 24px;
+    background: var(--darker-slate);
+    color: var(--white);
+    text-align: center;
+}
+
+.timelineSection h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    margin-bottom: 60px;
+}
+
+.timelineGrid {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.timelineGrid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(-50%);
+}
+
+.timelineItem {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50%;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timelineItem:nth-child(even) {
+    justify-content: flex-start;
+    padding-right: 0;
+    padding-left: 50%;
+}
+
+.timelineContent {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 12px;
+    width: 80%;
+    margin-right: 40px;
+    text-align: right;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.timelineItem:nth-child(even) .timelineContent {
+    margin-right: 0;
+    margin-left: 40px;
+    text-align: left;
+}
+
+.timelineDot {
+    position: absolute;
+    right: 50%;
+    top: 30px;
+    width: 16px;
+    height: 16px;
+    background: var(--golden-yellow);
+    border-radius: 50%;
+    transform: translateX(50%);
+    box-shadow: 0 0 0 4px var(--darker-slate);
+    z-index: 2;
+}
+
+.timelineItem:nth-child(even) .timelineDot {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+}
+
+.timelineYear {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--golden-yellow);
+    margin-bottom: 8px;
+    font-family: 'Playfair Display', serif;
+}
+
+.timelineContent h4 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.timelineContent p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+    .storyContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .valuesGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .leadershipGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 140px 24px 80px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .storyImageWrapper {
+        height: 300px;
+    }
+
+    .valuesGrid,
+    .leadershipGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .timelineGrid::before {
+        left: 20px;
+    }
+
+    .timelineItem {
+        padding-right: 0;
+        padding-left: 60px;
+        justify-content: flex-start;
+    }
+
+    .timelineItem:nth-child(even) {
+        padding-left: 60px;
+    }
+
+    .timelineContent,
+    .timelineItem:nth-child(even) .timelineContent {
+        width: 100%;
+        margin: 0;
+        text-align: left;
+    }
+
+    .timelineDot,
+    .timelineItem:nth-child(even) .timelineDot {
+        left: 20px;
+        transform: translateX(-50%);
+    }
+}

@@ -16,8 +16,8 @@ export default function TestimonialsSection() {
     return (
         <AnimatedSection className={`section ${styles.testimonials}`}>
             <div className="section-container">
-                <div className="section-label">TESTIMONIALS</div>
-                <h2 className="section-title">What Our Partners Say</h2>
+                <div className="section-label">CLIENT SHOWCASE</div>
+                <h2 className="section-title">Trusted By Industry Leaders</h2>
                 <div className="section-underline" />
                 <div className={styles.grid}>
                     {testimonials.map((t, i) => (

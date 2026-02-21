@@ -53,9 +53,9 @@ export default function HeroSection() {
     // Spring configuration for super premium animations
     const springTransition = {
         type: "spring",
-        stiffness: 100,
-        damping: 20,
-        mass: 1
+        stiffness: 45, /* Much softer, airy spring */
+        damping: 18,
+        mass: 0.8 /* Slightly lighter mass for a more delicate float */
     };
 
     return (
@@ -87,7 +87,7 @@ export default function HeroSection() {
                     <motion.div
                         key={currentSlide}
                         className={styles.content}
-                        initial={{ opacity: 0, y: 40, filter: "blur(4px)" }}
+                        initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
                         animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                         exit={{ opacity: 0, y: -20, filter: "blur(4px)" }}
                         transition={springTransition}

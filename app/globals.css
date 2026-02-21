@@ -21,7 +21,8 @@
   --soft-rose-bg: #fdf0f3;
   --soft-mint-bg: #ecfaf5;
 
-  --navy-blue: #0f1923;
+  /* Soothing Animations */
+  --ease-soothing: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 * {
@@ -209,7 +210,7 @@ ul {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: all 0.6s var(--ease-soothing);
   position: relative;
   overflow: hidden;
   text-decoration: none;
@@ -223,8 +224,8 @@ ul {
   left: 0;
   width: 0%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.2);
-  transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  background: rgba(255, 255, 255, 0.15);
+  transition: width 0.6s var(--ease-soothing);
   z-index: -1;
 }
 
@@ -233,6 +234,7 @@ ul {
 }
 
 .btn-primary:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(212, 168, 67, 0.4);
+  background: var(--golden-yellow-hover);
+  box-shadow: 0 4px 30px rgba(212, 168, 67, 0.5);
+  /* Soft, expansive glow */
 }

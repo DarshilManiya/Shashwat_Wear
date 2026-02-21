@@ -19,7 +19,7 @@ function FAQItem({ question, answer }) {
                 className={styles.answer}
                 initial={false}
                 animate={{ height: isOpen ? 'auto' : 0 }}
-                transition={{ duration: 0.3 }}
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             >
                 <div>
                     <p>{answer}</p>

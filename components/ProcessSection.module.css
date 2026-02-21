@@ -15,12 +15,13 @@
     padding: 40px 30px;
     position: relative;
     overflow: hidden;
-    transition: all 0.4s ease;
+    transition: all 0.6s var(--ease-soothing);
 }
 
 .card:hover {
     box-shadow: 0 12px 35px rgba(212, 168, 67, 0.12);
-    transform: translateY(-6px);
+    transform: translateY(-2px);
+    /* Much softer lift */
     border-color: rgba(212, 168, 67, 0.3);
 }
 

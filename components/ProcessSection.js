@@ -20,21 +20,21 @@ const containerVariants = {
     visible: {
         opacity: 1,
         transition: {
-            staggerChildren: 0.1,
+            staggerChildren: 0.2, /* Slightly slower stagger */
             delayChildren: 0.2
         }
     }
 };
 
 const itemVariants = {
-    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    hidden: { opacity: 0, y: 20, scale: 0.98 }, /* Less initial displacement */
     visible: {
         opacity: 1,
         y: 0,
         scale: 1,
         transition: {
             type: "spring",
-            stiffness: 80,
+            stiffness: 45, /* Much softer spring */
             damping: 18
         }
     }

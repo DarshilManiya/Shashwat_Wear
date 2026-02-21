@@ -12,12 +12,12 @@ export default function AnimatedSection({ children, className, id, delay = 0 }) 
             ref={ref}
             id={id}
             className={className}
-            initial={{ opacity: 0, y: 40, filter: "blur(4px)", scale: 0.98 }}
-            animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)", scale: 1 } : {}}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{
                 type: "spring",
-                stiffness: 80,
-                damping: 20,
+                stiffness: 40,
+                damping: 15,
                 mass: 1,
                 delay
             }}

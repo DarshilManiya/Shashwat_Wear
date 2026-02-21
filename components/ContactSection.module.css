@@ -164,6 +164,10 @@ textarea.formControl {
 }
 
 @media (max-width: 768px) {
+    .left h2 {
+        font-size: 32px;
+    }
+
     .formRow {
         grid-template-columns: 1fr;
     }

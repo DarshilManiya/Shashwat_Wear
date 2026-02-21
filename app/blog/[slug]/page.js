@@ -9,14 +9,14 @@ import blogs from '../../../data/blogs.json';
 import styles from './page.module.css';
 
 export async function generateStaticParams() {
-  return blogs.posts.map((post) => ({
+  return blogs.map((post) => ({
     slug: post.slug,
   }));
 }
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const post = blogs.posts.find((p) => p.slug === slug);
+  const post = blogs.find((p) => p.slug === slug);
   if (!post) return { title: 'Blog Not Found' };
 
   return {
@@ -136,13 +136,13 @@ function extractHeadings(content) {
 
 export default async function BlogPostPage({ params }) {
   const { slug } = await params;
-  const post = blogs.posts.find((p) => p.slug === slug);
+  const post = blogs.find((p) => p.slug === slug);
 
   if (!post) {
     notFound();
   }
 
-  const relatedPosts = blogs.posts
+  const relatedPosts = blogs
     .filter((p) => p.slug !== post.slug && p.category === post.category)
     .slice(0, 3);
 

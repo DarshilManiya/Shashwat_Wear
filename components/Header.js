@@ -7,12 +7,12 @@ import Link from 'next/link';
 import styles from './Header.module.css';
 
 const navLinks = [
-    { label: 'ABOUT', href: '#about' },
+    { label: 'HOME', href: '/' },
     { label: 'PRODUCTS', href: '#products' },
-    { label: 'INFRASTRUCTURE', href: '#infrastructure' },
     { label: 'BLOG', href: '/blog' },
     { label: 'GALLERY', href: '/gallery' },
     { label: 'EXPORTS', href: '/international' },
+    { label: 'ABOUT', href: '#about' },
     { label: 'CONTACT', href: '#contact' },
 ];
 

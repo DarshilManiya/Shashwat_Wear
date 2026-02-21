@@ -14,6 +14,31 @@ const categories = [
     { name: "Uniforms", sub: 'Corporate & Industrial', img: '/images/uniforms.png', filter: "Uniforms" },
 ];
 
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.15,
+            delayChildren: 0.2
+        }
+    }
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 40, scale: 0.95 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        transition: {
+            type: "spring",
+            stiffness: 70,
+            damping: 15
+        }
+    }
+};
+
 export default function CategoriesSection() {
     return (
         <AnimatedSection className={`section ${styles.categories}`} id="products">
@@ -22,16 +47,17 @@ export default function CategoriesSection() {
                 <h2 className="section-title">Manufacturing Categories</h2>
                 <div className="section-underline" />
                 <div className="section-subtitle">From formal shirts to casual wear, we manufacture a diverse range of premium garments.</div>
-                <div className={styles.grid}>
-                    {categories.map((cat, i) => (
+
+                <motion.div
+                    className={styles.grid}
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                >
+                    {categories.map((cat) => (
                         <Link key={cat.name} href={`/gallery?category=${encodeURIComponent(cat.filter)}`} style={{ textDecoration: 'none' }}>
-                            <motion.div
-                                className={styles.card}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.1, duration: 0.5 }}
-                            >
+                            <motion.div className={styles.card} variants={itemVariants}>
                                 <Image src={cat.img} alt={cat.name} fill style={{ objectFit: 'cover' }} />
                                 <div className={styles.overlay}>
                                     <div className={styles.accentLine} />
@@ -41,7 +67,8 @@ export default function CategoriesSection() {
                             </motion.div>
                         </Link>
                     ))}
-                </div>
+                </motion.div>
+
                 <div className={styles.viewCatalogue}>
                     <Link href="/gallery">VIEW FULL CATALOGUE →</Link>
                 </div>

@@ -1,13 +1,16 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 
 import styles from './HeroSection.module.css';
 
 export default function HeroSection() {
     const [currentSlide, setCurrentSlide] = useState(0);
+    const heroRef = useRef(null);
+    const { scrollY } = useScroll();
+    const yTransform = useTransform(scrollY, [0, 800], [0, 200]);
 
     const slides = [
         {
@@ -47,16 +50,25 @@ export default function HeroSection() {
         return () => clearInterval(timer);
     }, [slides.length]);
 
+    // Spring configuration for super premium animations
+    const springTransition = {
+        type: "spring",
+        stiffness: 100,
+        damping: 20,
+        mass: 1
+    };
+
     return (
-        <section className={styles.hero} id="home">
+        <section ref={heroRef} className={styles.hero} id="home">
             <AnimatePresence mode="wait">
                 <motion.div
                     key={currentSlide}
                     className={styles.bg}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                    initial={{ opacity: 0, scale: 1.05 }}
+                    animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 1 }}
+                    transition={{ duration: 1.5, ease: "easeOut" }}
+                    style={{ y: yTransform }}
                 >
                     <Image
                         src={slides[currentSlide].image}
@@ -75,20 +87,43 @@ export default function HeroSection() {
                     <motion.div
                         key={currentSlide}
                         className={styles.content}
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.8 }}
+                        initial={{ opacity: 0, y: 40, filter: "blur(4px)" }}
+                        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                        exit={{ opacity: 0, y: -20, filter: "blur(4px)" }}
+                        transition={springTransition}
                     >
-                        <div className={styles.badge}>{slides[currentSlide].badge}</div>
-                        <h1>{slides[currentSlide].title}</h1>
-                        <p className={styles.subtitle}>
+                        <motion.div
+                            className={styles.badge}
+                            initial={{ opacity: 0, letterSpacing: "1px" }}
+                            animate={{ opacity: 1, letterSpacing: "3px" }}
+                            transition={{ duration: 1, delay: 0.2 }}
+                        >
+                            {slides[currentSlide].badge}
+                        </motion.div>
+                        <motion.h1
+                            initial={{ y: 20, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ delay: 0.1, ...springTransition }}
+                        >
+                            {slides[currentSlide].title}
+                        </motion.h1>
+                        <motion.p
+                            className={styles.subtitle}
+                            initial={{ y: 20, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ delay: 0.2, ...springTransition }}
+                        >
                             {slides[currentSlide].subtitle}
-                        </p>
-                        <div className={styles.buttons}>
+                        </motion.p>
+                        <motion.div
+                            className={styles.buttons}
+                            initial={{ y: 20, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ delay: 0.3, ...springTransition }}
+                        >
                             <a href="#contact" className={styles.btnPrimary}>START YOUR ORDER</a>
                             <a href="#products" className={styles.btnOutline}>VIEW CATALOGUE</a>
-                        </div>
+                        </motion.div>
                     </motion.div>
                 </AnimatePresence>
             </div>

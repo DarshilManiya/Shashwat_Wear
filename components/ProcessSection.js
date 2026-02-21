@@ -15,6 +15,31 @@ const processSteps = [
     { icon: <HiOutlineTruck />, title: 'Finishing & Pack', desc: 'Steam ironing, tagging, and export-ready packaging.', num: '06' },
 ];
 
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.1,
+            delayChildren: 0.2
+        }
+    }
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        transition: {
+            type: "spring",
+            stiffness: 80,
+            damping: 18
+        }
+    }
+};
+
 export default function ProcessSection() {
     return (
         <AnimatedSection className={`section ${styles.process}`} id="process">
@@ -23,23 +48,23 @@ export default function ProcessSection() {
                 <h2 className="section-title">Our Manufacturing Process</h2>
                 <div className="section-underline" />
                 <div className="section-subtitle">A streamlined, transparent workflow designed for efficiency and quality consistency.</div>
-                <div className={styles.grid}>
-                    {processSteps.map((step, i) => (
-                        <motion.div
-                            key={step.title}
-                            className={styles.card}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: i * 0.08, duration: 0.5 }}
-                        >
+
+                <motion.div
+                    className={styles.grid}
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-50px" }}
+                >
+                    {processSteps.map((step) => (
+                        <motion.div key={step.title} className={styles.card} variants={itemVariants}>
                             <div className={styles.stepNumber}>{step.num}</div>
                             <div className={styles.iconBox}>{step.icon}</div>
                             <h3>{step.title}</h3>
                             <p>{step.desc}</p>
                         </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </AnimatedSection>
     );

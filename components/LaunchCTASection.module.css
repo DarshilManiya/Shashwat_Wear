@@ -120,3 +120,20 @@
         gap: 40px;
     }
 }
+
+@media (max-width: 768px) {
+    .left h2 {
+        font-size: 36px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .btnPrimary,
+    .btnOutline {
+        width: 100%;
+        text-align: center;
+    }
+}

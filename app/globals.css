@@ -144,6 +144,12 @@ ul {
   padding: 100px 0;
 }
 
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+}
+
 .section-container {
   max-width: 1280px;
   margin: 0 auto;
@@ -169,6 +175,12 @@ ul {
   margin-bottom: 16px;
 }
 
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 32px;
+  }
+}
+
 .section-underline {
   width: 60px;
   height: 3px;
@@ -185,7 +197,6 @@ ul {
   margin: 0 auto 60px;
 }
 
-/* ============ GLOBAL BUTTON ============ */
 .btn-primary {
   display: inline-block;
   background: var(--golden-yellow);
@@ -198,29 +209,30 @@ ul {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: all 0.35s ease;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   position: relative;
   overflow: hidden;
   text-decoration: none;
+  z-index: 1;
 }
 
 .btn-primary::before {
   content: '';
   position: absolute;
   top: 0;
-  left: -100%;
-  width: 100%;
+  left: 0;
+  width: 0%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transition: left 0.5s ease;
+  background: rgba(255, 255, 255, 0.2);
+  transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: -1;
 }
 
 .btn-primary:hover::before {
-  left: 100%;
+  width: 100%;
 }
 
 .btn-primary:hover {
-  background: var(--golden-yellow-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(212, 168, 67, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(212, 168, 67, 0.4);
 }

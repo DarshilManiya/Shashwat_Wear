@@ -30,7 +30,7 @@ export default function BlogPage() {
             <AnimatedSection className={`section ${styles.gridSection}`}>
                 <div className="section-container">
                     <div className={styles.grid}>
-                        {blogs.posts.map((post, i) => (
+                        {blogs.map((post, i) => (
                             <motion.article
                                 key={post.slug}
                                 className={styles.card}

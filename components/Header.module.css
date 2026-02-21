@@ -22,6 +22,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    flex-shrink: 0;
 }
 
 .logoBox {
@@ -124,26 +125,29 @@
 /* Mobile menu */
 .mobileToggle {
     display: none;
-    flex-direction: column;
-    gap: 5px;
     cursor: pointer;
     background: none;
     border: none;
     padding: 4px;
-}
-
-.mobileToggle span {
-    width: 24px;
-    height: 2px;
-    background: var(--dark-slate);
-    transition: all 0.3s;
+    color: var(--dark-slate);
 }
 
 .mobileNav {
     display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+    .navLinks {
+        gap: 12px;
+    }
+
+    .logoBox {
+        font-size: 16px;
+        padding: 4px 8px;
+    }
+}
+
+@media (max-width: 860px) {
     .navLinks {
         display: none;
     }

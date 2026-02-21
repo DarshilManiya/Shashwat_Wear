@@ -136,8 +136,7 @@ export default function AboutClient() {
                     <AnimatedSection delay={0.1}>
                         <div className={styles.leaderCard}>
                             <div className={styles.leaderImage}>
-                                {/* Using placeholder style pattern for now */}
-                                <div style={{ width: '100%', height: '100%', background: 'linear-gradient(45deg, #1f2937, #374151)' }}></div>
+                                <Image src="/images/aarav.png" alt="Aarav Patel" fill style={{ objectFit: 'cover' }} />
                             </div>
                             <h3>Aarav Patel</h3>
                             <div className={styles.leaderRole}>Managing Director</div>
@@ -147,7 +146,7 @@ export default function AboutClient() {
                     <AnimatedSection delay={0.2}>
                         <div className={styles.leaderCard}>
                             <div className={styles.leaderImage}>
-                                <div style={{ width: '100%', height: '100%', background: 'linear-gradient(45deg, #4b5563, #6b7280)' }}></div>
+                                <Image src="/images/neha.png" alt="Neha Sharma" fill style={{ objectFit: 'cover' }} />
                             </div>
                             <h3>Neha Sharma</h3>
                             <div className={styles.leaderRole}>Head of Production</div>
@@ -157,7 +156,7 @@ export default function AboutClient() {
                     <AnimatedSection delay={0.3}>
                         <div className={styles.leaderCard}>
                             <div className={styles.leaderImage}>
-                                <div style={{ width: '100%', height: '100%', background: 'linear-gradient(45deg, #374151, #4b5563)' }}></div>
+                                <Image src="/images/vikram.png" alt="Vikram Singh" fill style={{ objectFit: 'cover' }} />
                             </div>
                             <h3>Vikram Singh</h3>
                             <div className={styles.leaderRole}>Compliance Officer</div>

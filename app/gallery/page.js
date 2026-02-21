@@ -225,12 +225,12 @@ const products = [
     // Trousers (also under Men's Collection)
     {
         id: 13, name: 'Khaki Chinos', category: "Men's Collection",
-        gradient: 'linear-gradient(135deg, #C3B091 0%, #8B7355 100%)',
+        image: '/images/khaki-chinos.png',
         desc: 'Twill cotton chinos with stretch — MOQ 300 pcs',
     },
     {
         id: 14, name: 'Navy Formal Trouser', category: "Men's Collection",
-        gradient: 'linear-gradient(135deg, #1B2A4A 0%, #2C3E6B 100%)',
+        image: '/images/navy-trouser.png',
         desc: 'Polyester-viscose blend formal trouser — MOQ 500 pcs',
     },
 
@@ -254,7 +254,7 @@ const products = [
     },
     {
         id: 18, name: 'Industrial Workwear', category: "Uniforms",
-        gradient: 'linear-gradient(135deg, #36454F 0%, #2F4F4F 100%)',
+        image: '/images/industrial-workwear.png',
         desc: 'Heavy-duty workwear with reinforced stitching — MOQ 200 pcs',
     },
 
@@ -266,7 +266,7 @@ const products = [
     },
     {
         id: 20, name: 'Formal Women\'s Blouse', category: "Women's Wear",
-        gradient: 'linear-gradient(135deg, #DEB887 0%, #BC8F8F 100%)',
+        image: '/images/womens-blouse.png',
         desc: 'Chiffon and georgette formal blouses — MOQ 300 pcs',
     },
 ];
